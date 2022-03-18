@@ -38,7 +38,8 @@ class LoginRegister extends Component
         ]);
         
         if(\Auth::attempt(array('email' => $this->email, 'password' => $this->password))){
-                session()->flash('message', "You are Login successful.");
+                // session()->flash('message', "You are Login successful.");
+                return redirect()->to('/dashboard');
         }else{
             session()->flash('error', 'email and password are wrong.');
         }
