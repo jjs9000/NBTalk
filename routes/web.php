@@ -19,6 +19,6 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-});
+})->middleware(['auth'])->name('dashboard');
 
-Route::view('login','livewire.home');
+require __DIR__.'/auth.php';
